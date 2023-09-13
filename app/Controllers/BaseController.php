@@ -83,7 +83,7 @@ abstract class BaseController extends Controller
 	protected function viewAdmin(string $view)
 	{
 		// Assemble the browser page
-		echo view('admin/' . $view, $this->data);
+		echo view('backend/' . $view, $this->data);
 	}
 
 	/**
@@ -91,9 +91,9 @@ abstract class BaseController extends Controller
 	 *
 	 * @param string $view The view file to render
 	 */
-	protected function viewPublic(string $view)
+	protected function viewFront(string $view)
 	{
 		// Assemble the browser page
-		echo view('public/' . $view, $this->data);
+		echo view('frontend/' . $view, $this->data);
 	}
 }

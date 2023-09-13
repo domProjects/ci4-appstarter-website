@@ -6,9 +6,9 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-// Public
-$routes->get('/', 'Public\Home::index');
-$routes->get('/{locale}', 'Public\Home::index');
+// Frontend
+$routes->get('/', 'Frontend\Home::index');
+$routes->get('/{locale}', 'Frontend\Home::index');
 
-// Administration
-$routes->get('/{locale}/admin', 'Admin\Dashboard::index');
+// Backend
+$routes->get('/{locale}/admin', 'Backend\Dashboard::index');

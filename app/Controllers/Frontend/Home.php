@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Controllers\Public;
+namespace App\Controllers\Frontend;
 
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
-use App\Models\Public\HomeModel;
+use App\Models\Frontend\HomeModel;
 
 class Home extends BaseController
 {
@@ -28,7 +28,7 @@ class Home extends BaseController
 		$this->homedModel = new HomeModel();
 
 		// Loading the helper (function)
-		helper('public/home');
+		helper('frontend/home');
 	}
 
 	/**
@@ -37,6 +37,6 @@ class Home extends BaseController
 	public function index()
 	{
 		// Render page
-		$this->viewPublic('home');
+		$this->viewFront('home');
 	}
 }

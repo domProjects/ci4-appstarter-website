@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Controllers\Admin;
+namespace App\Controllers\Backend;
 
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
-use App\Models\Admin\DashboardModel;
+use App\Models\Backend\DashboardModel;
 
 class Dashboard extends BaseController
 {
@@ -28,7 +28,7 @@ class Dashboard extends BaseController
 		$this->dashboardModel = new DashboardModel();
 
 		// Loading the helper (function)
-		helper('admin/dashboard');
+		helper('backend/dashboard');
 	}
 
 	/**

@@ -1,4 +1,4 @@
-<?= $this->extend('public/_template/page') ?>
+<?= $this->extend('backend/_template/page') ?>
 
 <?= $this->section('content') ?>
 

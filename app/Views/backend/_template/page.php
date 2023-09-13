@@ -9,13 +9,13 @@
 	</head>
 	<body>
 		<header>
-			<?= $this->include('admin/_template/header') ?>
+			<?= $this->include('backend/_template/header') ?>
 		</header>
 		<main>
 			<?= $this->renderSection('content') ?>
 		</main>
 		<footer>
-			<?= $this->include('admin/_template/footer') ?>
+			<?= $this->include('backend/_template/footer') ?>
 		</footer>
 		<script src="<?= base_url('assets/admin/js/main.min.js') ?>"></script>
 	</body>
