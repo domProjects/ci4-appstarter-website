@@ -41,7 +41,7 @@ class App extends BaseConfig
      * something else. If you are using mod_rewrite to remove the page set this
      * variable so that it is blank.
      */
-    public string $indexPage = 'index.php';
+    public string $indexPage = '';
 
     /**
      * --------------------------------------------------------------------------
@@ -82,7 +82,7 @@ class App extends BaseConfig
      *
      * If false, no automatic detection will be performed.
      */
-    public bool $negotiateLocale = false;
+    public bool $negotiateLocale = true;
 
     /**
      * --------------------------------------------------------------------------
@@ -97,7 +97,43 @@ class App extends BaseConfig
      *
      * @var string[]
      */
-    public array $supportedLocales = ['en'];
+    public array $supportedLocales = [
+        'ar',
+        'bg',
+        'bn',
+        'bs',
+        'cs',
+        'de',
+        'en',
+        'es',
+        'fa',
+        'fr',
+        'hu',
+        'id',
+        'it',
+        'ja',
+        'ko',
+        'lt',
+        'lv',
+        'ml',
+        'nl',
+        'no',
+        'pl',
+        'pt-BR',
+        'pt',
+        'ro',
+        'ru',
+        'si',
+        'sk',
+        'sr',
+        'sv-SE',
+        'th',
+        'tr',
+        'uk',
+        'vi',
+        'zh-CN',
+        'zh-TW',
+    ];
 
     /**
      * --------------------------------------------------------------------------
@@ -109,7 +145,7 @@ class App extends BaseConfig
      *
      * @see https://www.php.net/manual/en/timezones.php for list of timezones supported by PHP.
      */
-    public string $appTimezone = 'UTC';
+    public string $appTimezone = 'Europe/Paris';
 
     /**
      * --------------------------------------------------------------------------

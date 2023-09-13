@@ -60,6 +60,7 @@ abstract class BaseController extends Controller
 
         // Retrieval of variables for the language
         $this->data['locale'] = $request->getLocale();
+        $this->data['supportedLocales'] = $request->config->supportedLocales;
 
         // Retrieval of the charset variable
         $this->data['charset'] = $request->config->charset;
