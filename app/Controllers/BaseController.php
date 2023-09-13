@@ -58,6 +58,15 @@ abstract class BaseController extends Controller
 		// Do Not Edit This Line
 		parent::initController($request, $response, $logger);
 
+		// Security of response headers
+		$response->setHeader('Access-Control-Allow-Origin', site_url());
+		$response->setHeader('Content-Type', 'text/html; charset=' . $request->config->charset);
+		$response->setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+		$response->setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
+		$response->setHeader('X-Content-Type-Options', 'nosniff');
+		$response->setHeader('X-Frame-Options', 'DENY');
+		$response->setHeader('X-XSS-Protection', '1; mode=block');
+
         // Retrieval of variables for the language
         $this->data['locale'] = $request->getLocale();
         $this->data['supportedLocales'] = $request->config->supportedLocales;
