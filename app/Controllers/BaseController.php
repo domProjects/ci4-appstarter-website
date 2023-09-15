@@ -37,12 +37,19 @@ abstract class BaseController extends Controller
 	 */
 	protected $helpers = [];
 
-    /**
-     * The data to be passed to the view.
-     *
-     * @var array
-     */
-    protected $data = [];
+	/**
+	 * The data to be passed to the view.
+	 *
+	 * @var array
+	 */
+	protected $data = [];
+
+	/**
+	 * The subtitle to be passed to the view.
+	 *
+	 * @var string
+	 */
+	protected $subtitle = '';
 
 	/**
 	 * Be sure to declare properties for any property fetch you initialized.
@@ -58,6 +65,9 @@ abstract class BaseController extends Controller
 		// Do Not Edit This Line
 		parent::initController($request, $response, $logger);
 
+		//
+		$this->config = config('AppConfig');
+
 		// Security of response headers
 		$response->setHeader('Access-Control-Allow-Origin', site_url());
 		$response->setHeader('Content-Type', 'text/html; charset=' . $request->config->charset);
@@ -67,12 +77,12 @@ abstract class BaseController extends Controller
 		$response->setHeader('X-Frame-Options', 'DENY');
 		$response->setHeader('X-XSS-Protection', '1; mode=block');
 
-        // Retrieval of variables for the language
-        $this->data['locale'] = $request->getLocale();
-        $this->data['supportedLocales'] = $request->config->supportedLocales;
+		// Retrieval of variables for the language
+		$this->data['locale'] = $request->getLocale();
+		$this->data['supportedLocales'] = $request->config->supportedLocales;
 
-        // Retrieval of the charset variable
-        $this->data['charset'] = $request->config->charset;
+		// Retrieval of the charset variable
+		$this->data['charset'] = $request->config->charset;
 	}
 
 	/**
@@ -93,6 +103,12 @@ abstract class BaseController extends Controller
 	 */
 	protected function viewFront(string $view)
 	{
+		// Displaying the title for the <title> tag
+		$this->data['titleTag'] = title_tag($this->config->siteName, $this->subtitle);
+
+		// 
+		$this->data['copyright'] = copyright(lang('AppFrontend.copyright'), $this->config->startDate, $this->config->siteName);
+
 		// Assemble the browser page
 		echo view('frontend/' . $view, $this->data);
 	}

@@ -1,2 +1,11 @@
-
-
+// Bootstrap
+//
+// Sticky footer with fixed navbar
+//
+main {
+	> {
+		.container {
+			padding: 60px 15px 0;
+		}
+	}
+}

@@ -1,21 +1,25 @@
 <!doctype html>
-<html lang="<?= $locale ?>">
+<html lang="<?= esc($locale) ?>" class="h-100">
 	<head>
-		<meta charset="<?= $charset ?>">
+		<meta charset="<?= esc($charset) ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>CodeIgniter 4 App Starter</title>
+		<title><?= esc($titleTag) ?></title>
 		<link rel="stylesheet" href="<?= base_url('assets/public/css/main.min.css') ?>">
 		<link rel="canonical" href="<?= current_url() ?>">
 	</head>
-	<body>
+	<body class="d-flex flex-column h-100">
 		<header>
 			<?= $this->include('frontend/_template/header') ?>
 		</header>
-		<main>
-			<?= $this->renderSection('content') ?>
+		<main class="flex-shrink-0">
+			<div class="container">
+				<?= $this->renderSection('content') ?>
+			</div>
 		</main>
-		<footer>
-			<?= $this->include('frontend/_template/footer') ?>
+		<footer class="footer mt-auto py-3 bg-body-tertiary">
+			<div class="container">
+				<?= $this->include('frontend/_template/footer') ?>
+			</div>
 		</footer>
 		<script src="<?= base_url('assets/public/js/main.min.js') ?>"></script>
 	</body>

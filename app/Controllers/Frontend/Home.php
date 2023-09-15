@@ -36,6 +36,9 @@ class Home extends BaseController
 	 */
 	public function index()
 	{
+		// Declare subtitle
+		$this->subtitle = lang('AppFrontend.menu.home');
+
 		// Render page
 		$this->viewFront('home');
 	}
