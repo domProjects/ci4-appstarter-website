@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand-md fixed-top bg-body-tertiary">
 	<div class="container">
-		<a href="<?= site_url($locale) ?>" class="navbar-brand">AppStarter</a>
+		<a href="<?= site_url($locale) ?>" class="navbar-brand"><?= esc($title) ?></a>
 		<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="<?= lang('AppFrontend.menuAria.toggleNavigation') ?>">
 			<span class="navbar-toggler-icon"></span>
 		</button>

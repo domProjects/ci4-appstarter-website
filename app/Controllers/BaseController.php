@@ -103,6 +103,9 @@ abstract class BaseController extends Controller
 	 */
 	protected function viewFront(string $view)
 	{
+		// Displaying the title
+		$this->data['title'] = $this->config->siteName;
+
 		// Displaying the title for the <title> tag
 		$this->data['titleTag'] = title_tag($this->config->siteName, $this->subtitle);
 
