@@ -57,6 +57,14 @@
 // Optional Bootstrap utilities
 @import "../../../bootstrap/scss/utilities/api";
 
+// Bootstrap Icons
+//
+// BootAdmin - Variable overrides
+$bootstrap-icons-font-dir: "../fonts" !default;
+
+// Required Bootstrap Icons
+@import "../../../bootstrap-icons/scss/bootstrap-icons";
+
 // Add additional code
 @import "variables";
 @import "layout";
